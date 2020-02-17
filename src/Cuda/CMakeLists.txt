@@ -29,11 +29,13 @@ file(GLOB_RECURSE CUDA_ALL_SOURCE_FILES "*.cpp")
 file(GLOB_RECURSE CUDA_ALL_CUDA_HEADER_FILES "*.cuh")
 file(GLOB_RECURSE CUDA_ALL_CUDA_SOURCE_FILES "*.cu")
 
-# (testing) flags for cuda code generation
+# CUDA build for nano
 set(CUDA_NVCC_FLAGS
-        -gencode=arch=compute_50,code=sm_60
-        -gencode=arch=compute_50,code=sm_50
+        -gencode=arch=compute_53,code=sm_53
+        -gencode=arch=compute_53,code=compute_53
         --expt-relaxed-constexpr)
+
+
 
 # create (should be static) library
 set(OPEN3D_CUDA_MODULE "Open3DCuda" CACHE STRING "CUDA component library")
