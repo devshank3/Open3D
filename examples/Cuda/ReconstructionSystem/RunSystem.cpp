@@ -1,13 +1,11 @@
-//
-// Created by wei on 2/4/19.
-//
+
 
 #include "DatasetConfig.h"
 
-#include "IntegrateScene.h"
+//#include "IntegrateScene.h"
 #include "MakeFragments.h"
-#include "RefineRegistration.h"
-#include "RegisterFragments.h"
+//#include "RefineRegistration.h"
+//#include "RegisterFragments.h"
 
 using namespace open3d;
 using namespace open3d::io;
@@ -45,11 +43,11 @@ int main(int argc, char **argv) {
     Timer timer;
 
     timer.Start();
-    // MakeFragment::Run(config);
+    MakeFragment::Run(config);
     timer.Stop();
     std::string make_fragment_time = SecondsToHMS(timer.GetDuration() * 1e-3);
 
-    timer.Start();
+    /*timer.Start();
     RegisterFragments::Run(config);
     timer.Stop();
     std::string register_fragments_time =
@@ -64,21 +62,21 @@ int main(int argc, char **argv) {
     timer.Start();
     IntegrateScene::Run(config);
     timer.Stop();
-    std::string integrate_scene_time = SecondsToHMS(timer.GetDuration() * 1e-3);
+    std::string integrate_scene_time = SecondsToHMS(timer.GetDuration() * 1e-3);*/
 
     timer_total.Stop();
     std::string total_time = SecondsToHMS(timer_total.GetDuration() * 1e-3);
 
     LogInfo("================================\n");
     LogInfo(" - Make fragment      : {}\n", make_fragment_time.c_str());
-    LogInfo(" - Register fragments : {}\n", register_fragments_time.c_str());
-    LogInfo(" - Refine registration: {}\n", refine_registration_time.c_str());
-    LogInfo(" - Intergate scene    : {}\n", integrate_scene_time.c_str());
+    //LogInfo(" - Register fragments : {}\n", register_fragments_time.c_str());
+    //LogInfo(" - Refine registration: {}\n", refine_registration_time.c_str());
+    //LogInfo(" - Intergate scene    : {}\n", integrate_scene_time.c_str());
     LogInfo(" - Total              : {}\n", total_time.c_str());
     LogInfo("================================\n");
 
-    auto mesh = io::CreateMeshFromFile(config.GetReconstructedSceneFile());
-    visualization::DrawGeometries({mesh});
+    //auto mesh = io::CreateMeshFromFile(config.GetReconstructedSceneFile());
+    //visualization::DrawGeometries({mesh});
 
     return 0;
 }
