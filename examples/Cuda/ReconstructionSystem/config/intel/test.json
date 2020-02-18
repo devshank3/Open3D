@@ -1,7 +1,7 @@
 {
-  "name": "CMU - Test",
-  "path_dataset": "/home/dongw1/Workspace/data/intel/",
-  "path_intrinsic": "/home/dongw1/Workspace/open3d-unofficial/examples/Cuda/ReconstructionSystem/config/intrinsics/camera_azure_kinect.json",
+  "name": "intel D435i Test",
+  "path_dataset": " python dataset path of intel capture",
+  "path_intrinsic": " intel d435i intrinsics either from CUDA config file or captured dateset intrinsics file",
   "n_frames_per_fragment": 100,
   "n_keyframes_per_n_frame": 5,
   "max_depth": 3.0,
