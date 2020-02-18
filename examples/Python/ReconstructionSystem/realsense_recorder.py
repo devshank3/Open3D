@@ -60,7 +60,7 @@ if __name__ == "__main__":
         description=
         "Realsense Recorder. Please select one of the optional arguments")
     parser.add_argument("--output_folder",
-                        default='../dataset/realsense/',
+                        default='dataset/realsense/',
                         help="set output folder")
     parser.add_argument("--record_rosbag",
                         action='store_true',
