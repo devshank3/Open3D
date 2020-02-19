@@ -32,6 +32,11 @@ Team [Open3D](https://github.com/intel-isl/Open3D)
 
 ## Usage 
 
+After following https://github.com/devshank3/JetScan/blob/masterSoftware_O3D/Readme.md
+
+for Software Setup 
+
+
 
 ### For changes made look into 
 
