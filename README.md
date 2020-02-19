@@ -1,10 +1,23 @@
 # Open3D Library with CUDA support amended for Jetson platform.
 
-All credits to [Wei Dong](https://github.com/theNded/Open3D) and his efforts for making CUDA support  
+Credits :
 
-### For changes made look into Mychanges.md
+All credits to 
 
-### For setup 
+[Wei Dong](https://github.com/theNded/Open3D) and his efforts for making initial CUDA support  
+
+https://github.com/theNded/Open3D
+
+Team [Open3D](https://github.com/intel-isl/Open3D)  
+
+### For changes made look into 
+
+my_changes.md
+
+
+### Setup for JetScan 
+
+
 
 
 
