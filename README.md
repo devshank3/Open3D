@@ -17,6 +17,7 @@ my_changes.md
 
 ### Setup for JetScan 
 
+https://github.com/devshank3/JetScan
 
 
 
