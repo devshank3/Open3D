@@ -1,4 +1,8 @@
-# Open3D Library with CUDA support amended for Jetson platform.
+# Open3D Library with CUDA support amended for Jetson platform. (extented for JetScan : RGBD 3D scanner )
+
+Link for JetScan:
+
+https://github.com/devshank3/JetScan
 
 Credits :
 
