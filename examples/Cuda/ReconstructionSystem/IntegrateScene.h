@@ -37,7 +37,7 @@ void IntegrateFragment(int fragment_id,
                              (int)config.color_files_.size());
 
     for (int i = begin; i < end; ++i) {
-        LogInfo("Integrating frame {} ...", i);
+        //LogDebug("Integrating frame {} ...", i);
 
         geometry::Image depth, color;
         ReadImage(config.depth_files_[i], depth);
@@ -86,7 +86,10 @@ int Run(DatasetConfig &config) {
 
     WriteTriangleMeshToPLY(config.GetReconstructedSceneFile(), *mesh);
     timer.Stop();
+    LogInfo("\n");
+    LogInfo("================================");
     LogInfo("IntegrateScene takes {} s", timer.GetDuration() * 1e-3);
+    //LogInfo("================================");
 
     return 0;
 }

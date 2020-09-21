@@ -84,7 +84,7 @@ void MakePoseGraphForFragment(int fragment_id, DatasetConfig &config) {
         ReadImage(config.color_files_[t], color);
         rgbd_target.Upload(depth, color);
 
-        LogInfo("RGBD Odometry between ({} {})", s, t);
+        LogDebug("RGBD Odometry between ({} {})", s, t);
         odometry.transform_source_to_target_ = Eigen::Matrix4d::Identity();
         odometry.Initialize(rgbd_source, rgbd_target);
         odometry.ComputeMultiScale();
@@ -250,6 +250,8 @@ static int Run(DatasetConfig &config) {
         IntegrateForFragment(i, config);
     }
     timer.Stop();
+    LogInfo("\n");
+    LogInfo("================================");
     LogInfo("MakeFragment takes {} s", timer.GetDuration() * 1e-3);
 }
 };  // namespace MakeFragment

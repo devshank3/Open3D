@@ -49,10 +49,11 @@ int main(int argc, char **argv) {
     std::string total_time = SecondsToHMS(timer_total.GetDuration() * 1e-3);
 
     LogInfo("\n");
-    LogInfo("================================");
-    LogInfo(" - Make fragment      : {}", make_fragment_time.c_str());
+    //LogInfo("================================");
+    //LogInfo(" - Make fragment      : {}", make_fragment_time.c_str());
     LogInfo(" - Total              : {}", total_time.c_str());
     LogInfo("================================");
+    LogInfo("\n");
 
     return 0;
 

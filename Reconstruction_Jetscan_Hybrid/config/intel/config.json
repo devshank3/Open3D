@@ -1,5 +1,5 @@
 {
-  "name": "intel D435i Test",
+  "name": "Jetscan using Intel D435i",
   "path_dataset": "realsense2",
   "path_intrinsic": "realsense2/camera_intrinsic.json",
   "n_frames_per_fragment": 100,
@@ -9,11 +9,14 @@
   "max_depth_diff": 0.07,
   "depth_factor": 1000.0,
   "preference_loop_closure_odometry": 0.1,
-  "preference_loop_closure_registration": 10.0,
+  "preference_loop_closure_registration": 5.0,
   "tsdf_cubic_size": 3.0,
-  "bucket_count_tsdf": 4000,
-  "value_cap_tsdf": 60000,
-  "max_vertices_mesh": 2000000,
-  "max_triangle_mesh": 4000000,
-  "run_all": true
+  "bucket_count_tsdf": 2000,
+  "value_cap_tsdf": 40000,
+  "max_vertices_mesh": 1000000,
+  "max_triangle_mesh": 3000000,
+  "run_all": true,
+  "icp_method": "color",
+  "global_registration": "ransac",
+  "python_multi_threading": true
 }
