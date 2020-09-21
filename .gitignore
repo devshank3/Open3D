@@ -14,6 +14,7 @@ util/conda_package/dist/
 doxygen/
 docs/python_api/
 node_modules/
+Reconstruction_Jetscan_Hybrid/realsense2/
 
 # Local configs
 _vimrc_local.vim

@@ -21,8 +21,7 @@ struct Match {
 };
 
 static const std::string kDefaultDatasetConfigDir =
-    "Reconstruction_Jetscan_Hybrid"
-    "/config";
+    "config";
 
 class DatasetConfig : public utility::IJsonConvertible {
 public:
