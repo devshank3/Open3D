@@ -238,7 +238,7 @@ static int Run(DatasetConfig &config) {
     timer.Start();
 
     filesystem::MakeDirectoryHierarchy(config.path_dataset_ +
-                                       "/fragments_cuda/thumbnails");
+                                       "/fragments/thumbnails");
 
     const int num_fragments = DIV_CEILING(config.color_files_.size(),
                                           config.n_frames_per_fragment_);

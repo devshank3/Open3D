@@ -235,7 +235,7 @@ int main(int argc, char **argv) {
     if (!is_success) return 1;
 
     SetVerbosityLevel(VerbosityLevel::Debug);
-    filesystem::MakeDirectory(config.path_dataset_ + "/fragments_cuda");
+    filesystem::MakeDirectory(config.path_dataset_ + "/fragments");
 
     config.with_opencv_ = false;
     const int num_fragments = DIV_CEILING(config.color_files_.size(),

@@ -112,7 +112,7 @@ public:
     }
 
     bool GetFragmentFiles() {
-        std::string fragment_directory = path_dataset_ + "/fragments_cuda";
+        std::string fragment_directory = path_dataset_ + "/fragments";
         if (!utility::filesystem::DirectoryExists(fragment_directory)) {
             utility::LogError("No fragment folder found in directory %s\n",
                        fragment_directory.c_str());
@@ -129,7 +129,7 @@ public:
 
     bool GetThumbnailFragmentFiles() {
         std::string fragment_directory =
-            path_dataset_ + "/fragments_cuda/thumbnails";
+            path_dataset_ + "/fragments/thumbnails";
         if (!utility::filesystem::DirectoryExists(fragment_directory)) {
             utility::LogError("No fragment thumbnail folder found in "
                                "directory %s\n",
@@ -148,7 +148,7 @@ public:
 
     std::string GetPlyFileForFragment(int fragment_id) {
         std::stringstream ss;
-        ss << path_dataset_ << "/fragments_cuda/fragment_";
+        ss << path_dataset_ << "/fragments/fragment_";
         ss << std::setw(3) << std::setfill('0') << fragment_id;
         ss << ".ply";
         return ss.str();
@@ -156,7 +156,7 @@ public:
 
     std::string GetBinFileForFragment(int fragment_id) {
         std::stringstream ss;
-        ss << path_dataset_ << "/fragments_cuda/fragment_";
+        ss << path_dataset_ << "/fragments/fragment_";
         ss << std::setw(3) << std::setfill('0') << fragment_id;
         ss << ".bin";
         return ss.str();
@@ -164,7 +164,7 @@ public:
 
     std::string GetThumbnailPlyFileForFragment(int fragment_id) {
         std::stringstream ss;
-        ss << path_dataset_ << "/fragments_cuda/thumbnails/fragment_";
+        ss << path_dataset_ << "/fragments/thumbnails/fragment_";
         ss << std::setw(3) << std::setfill('0') << fragment_id;
         ss << ".ply";
         return ss.str();
@@ -174,7 +174,7 @@ public:
         int fragment_id, bool optimized) {
 
         std::stringstream ss;
-        ss << path_dataset_ << "/fragments_cuda/fragment_";
+        ss << path_dataset_ << "/fragments/fragment_";
         if (optimized) {
             ss << "optimized_";
         }
@@ -186,7 +186,7 @@ public:
 
     std::string GetPoseGraphFileForScene(bool optimized) {
         std::stringstream ss;
-        ss << path_dataset_ << "/scene_cuda/global_registration";
+        ss << path_dataset_ << "/scene/global_registration";
         if (optimized) {
             ss << "_optimized";
         }
@@ -197,7 +197,7 @@ public:
 
     std::string GetPoseGraphFileForRefinedScene(bool optimized) {
         std::stringstream ss;
-        ss << path_dataset_ << "/scene_cuda/global_registration_refined";
+        ss << path_dataset_ << "/scene/global_registration_refined";
         if (optimized) {
             ss << "_optimized";
         }
@@ -208,7 +208,7 @@ public:
 
     std::string GetReconstructedSceneFile() {
         std::stringstream ss;
-        ss << path_dataset_ << "/scene_cuda/integrated.ply";
+        ss << path_dataset_ << "/scene/integrated.ply";
 
         return ss.str();
     }

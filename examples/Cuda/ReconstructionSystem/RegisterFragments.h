@@ -132,7 +132,7 @@ void OptimizePoseGraphForScene(DatasetConfig &config) {
 int Run(DatasetConfig &config) {
     Timer timer;
     timer.Start();
-    filesystem::MakeDirectory(config.path_dataset_ + "/scene_cuda");
+    filesystem::MakeDirectory(config.path_dataset_ + "/scene");
 
     bool is_success = config.GetThumbnailFragmentFiles();
     if (!is_success) {

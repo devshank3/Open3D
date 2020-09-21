@@ -71,7 +71,7 @@ int main(int argc, char **argv) {
 
     Timer timer;
     timer.Start();
-    filesystem::MakeDirectory(config.path_dataset_ + "/scene_cuda");
+    filesystem::MakeDirectory(config.path_dataset_ + "/scene");
 
     is_success = config.GetThumbnailFragmentFiles();
     if (!is_success) {

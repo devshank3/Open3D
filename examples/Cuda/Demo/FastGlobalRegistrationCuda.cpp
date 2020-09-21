@@ -90,7 +90,7 @@ int main(int argc, char **argv) {
         source_path = argv[1];
         target_path = argv[2];
     } else {
-        std::string test_data_path = "/media/wei/Data/data/redwood_simulated/livingroom1-clean/fragments_cuda";
+        std::string test_data_path = "/media/wei/Data/data/redwood_simulated/livingroom1-clean/fragments";
         source_path = test_data_path + "/fragment_005.ply";
         target_path = test_data_path + "/fragment_008.ply";
     }

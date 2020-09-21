@@ -91,13 +91,13 @@ int main(int argc, char **argv) {
     DatasetConfig config;
 
     std::string config_path = argc > 1 ? argv[1] :
-                              kDefaultDatasetConfigDir + "/stanford/lounge.json";
+                              kDefaultDatasetConfigDir + "/test/config.json";
 
     bool is_success = ReadIJsonConvertible(config_path, config);
     if (!is_success) return 1;
 
     SetVerbosityLevel(VerbosityLevel::Debug);
-    filesystem::MakeDirectory(config.path_dataset_ + "/fragments_cuda");
+    filesystem::MakeDirectory(config.path_dataset_ + "/fragments");
 
     config.with_opencv_ = true;
     const int num_fragments =
