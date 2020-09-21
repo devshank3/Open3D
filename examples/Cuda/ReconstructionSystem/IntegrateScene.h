@@ -1,5 +1,6 @@
 //
 // Created by wei on 2/4/19.
+// Edited by Shank for Jetscan.
 //
 
 #include <string>
@@ -36,7 +37,7 @@ void IntegrateFragment(int fragment_id,
                              (int)config.color_files_.size());
 
     for (int i = begin; i < end; ++i) {
-        LogDebug("Integrating frame {} ...\n", i);
+        LogInfo("Integrating frame {} ...", i);
 
         geometry::Image depth, color;
         ReadImage(config.depth_files_[i], depth);
@@ -63,11 +64,11 @@ int Run(DatasetConfig &config) {
     cuda::TransformCuda trans = cuda::TransformCuda::Identity();
     cuda::ScalableTSDFVolumeCuda tsdf_volume(
             8, (float)config.tsdf_cubic_size_ / 512,
-            (float)config.tsdf_truncation_, trans, 40000, 600000);
+            (float)config.tsdf_truncation_, trans, config.bucket_count_tsdf_,config.value_cap_tsdf_);
 
     bool is_success = config.GetFragmentFiles();
     if (!is_success) {
-        utility::LogError("Unable to get fragment files\n");
+        utility::LogError("Unable to get fragment files");
         return -1;
     }
     for (int i = 0; i < config.fragment_files_.size(); ++i) {
@@ -79,14 +80,13 @@ int Run(DatasetConfig &config) {
     /** Larger scene, larger points **/
     cuda::ScalableMeshVolumeCuda mesher(
             cuda::VertexWithNormalAndColor, 8,
-            tsdf_volume.active_subvolume_entry_array_.size(), 20000000,
-            40000000);
+            tsdf_volume.active_subvolume_entry_array_.size(), config.max_vertices_mesh_,config.max_triangle_mesh_);
     mesher.MarchingCubes(tsdf_volume);
     auto mesh = mesher.mesh().Download();
 
     WriteTriangleMeshToPLY(config.GetReconstructedSceneFile(), *mesh);
     timer.Stop();
-    LogInfo("IntegrateScene takes {} s\n", timer.GetDuration() * 1e-3);
+    LogInfo("IntegrateScene takes {} s", timer.GetDuration() * 1e-3);
 
     return 0;
 }

@@ -1,0 +1,19 @@
+{
+  "name": "intel D435i Test",
+  "path_dataset": " python dataset path of intel capture",
+  "path_intrinsic": " intel d435i intrinsics either from CUDA config file or captured dateset intrinsics file",
+  "n_frames_per_fragment": 100,
+  "n_keyframes_per_n_frame": 5,
+  "max_depth": 3.0,
+  "voxel_size": 0.05,
+  "max_depth_diff": 0.07,
+  "depth_factor": 1000.0,
+  "preference_loop_closure_odometry": 0.1,
+  "preference_loop_closure_registration": 10.0,
+  "tsdf_cubic_size": 3.0,
+  "bucket_count_tsdf": 4000,
+  "value_cap_tsdf": 60000,
+  "max_vertices_mesh": 2000000,
+  "max_triangle_mesh": 4000000,
+  "run_all": true
+}

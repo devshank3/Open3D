@@ -1,5 +1,6 @@
 //
 // Created by wei on 2/7/19.
+// Edited by Shank for Jetscan.
 //
 
 #pragma once
@@ -20,8 +21,8 @@ struct Match {
 };
 
 static const std::string kDefaultDatasetConfigDir =
-    "../../../examples/Cuda"
-    "/ReconstructionSystem/config";
+    "Reconstruction_Jetscan_Hybrid"
+    "/config";
 
 class DatasetConfig : public utility::IJsonConvertible {
 public:
@@ -30,9 +31,15 @@ public:
 
     bool use_data_association_;
     bool with_opencv_;
+    bool run_all_;
 
     int n_frames_per_fragment_;
     int n_keyframes_per_n_frame_;
+
+    int bucket_count_tsdf_;
+    int value_cap_tsdf_;
+    int max_vertices_mesh_;
+    int max_triangle_mesh_;
 
     double min_depth_;
     double max_depth_;
@@ -222,6 +229,8 @@ public:
         use_data_association_ = value.get("is_tum", false).asBool();
         with_opencv_ = value.get("with_opencv", true).asBool();
 
+        run_all_ = value.get("run_all", true).asBool();
+
         n_frames_per_fragment_ = value.get(
             "n_frames_per_fragment", 100).asInt();
         n_keyframes_per_n_frame_ = value.get(
@@ -239,6 +248,12 @@ public:
             "preference_loop_closure_registration", 5.0).asDouble();
         tsdf_cubic_size_ = value.get("tsdf_cubic_size", 3.0).asDouble();
         tsdf_truncation_ = value.get("tsdf_truncation", 0.04).asDouble();
+
+        bucket_count_tsdf_ = value.get("bucket_count_tsdf",40000).asInt();
+        value_cap_tsdf_ = value.get("value_cap_tsdf",60000).asInt();
+        max_vertices_mesh_ = value.get("max_vertices_mesh",2000000).asInt();
+        max_triangle_mesh_ = value.get("max_triangle_mesh",4000000).asInt();
+        
 
         if (path_intrinsic_.empty()) {
             intrinsic_ = camera::PinholeCameraIntrinsic(

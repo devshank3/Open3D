@@ -1,11 +1,9 @@
-
+//
+// Only execute Integration of whole scene
+//
 
 #include "DatasetConfig.h"
-
 #include "IntegrateScene.h"
-#include "MakeFragments.h"
-#include "RefineRegistration.h"
-#include "RegisterFragments.h"
 
 using namespace open3d;
 using namespace open3d::io;
@@ -32,7 +30,7 @@ int main(int argc, char **argv) {
     DatasetConfig config;
 
     std::string config_path =
-            argc > 1 ? argv[1] : kDefaultDatasetConfigDir + "/intel/config.json";
+            argc > 1 ? argv[1] : kDefaultDatasetConfigDir + "/intel/test.json";
 
     bool is_success = ReadIJsonConvertible(config_path, config);
     if (!is_success) return 1;
@@ -43,40 +41,16 @@ int main(int argc, char **argv) {
     Timer timer;
 
     timer.Start();
-    MakeFragment::Run(config);
-    timer.Stop();
-    std::string make_fragment_time = SecondsToHMS(timer.GetDuration() * 1e-3);
-
-
-    timer.Start();
-    if (config.run_all_ == true){
-    RegisterFragments::Run(config);}
-    timer.Stop();
-    std::string register_fragments_time =
-            SecondsToHMS(timer.GetDuration() * 1e-3);
-
-    timer.Start();
-    if (config.run_all_ == true){
-    RefineRegistration::Run(config);}
-    timer.Stop();
-    std::string refine_registration_time =
-            SecondsToHMS(timer.GetDuration() * 1e-3);
-
-    timer.Start();
     if (config.run_all_ == true){
     IntegrateScene::Run(config);}
     timer.Stop();
     std::string integrate_scene_time = SecondsToHMS(timer.GetDuration() * 1e-3);
-    
 
     timer_total.Stop();
     std::string total_time = SecondsToHMS(timer_total.GetDuration() * 1e-3);
     
     LogInfo("\n");
     LogInfo("================================");
-    LogInfo(" - Make fragment      : {}", make_fragment_time.c_str());
-    LogInfo(" - Register fragments : {}", register_fragments_time.c_str());
-    LogInfo(" - Refine registration: {}", refine_registration_time.c_str());
     LogInfo(" - Intergate scene    : {}", integrate_scene_time.c_str());
     LogInfo(" - Total              : {}", total_time.c_str());
     LogInfo("================================");
