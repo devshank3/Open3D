@@ -197,7 +197,7 @@ public:
 
     std::string GetPoseGraphFileForRefinedScene(bool optimized) {
         std::stringstream ss;
-        ss << path_dataset_ << "/scene/global_registration_refined";
+        ss << path_dataset_ << "/scene/refined_registration";
         if (optimized) {
             ss << "_optimized";
         }
