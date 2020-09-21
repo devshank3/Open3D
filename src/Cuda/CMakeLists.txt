@@ -33,6 +33,8 @@ file(GLOB_RECURSE CUDA_ALL_CUDA_SOURCE_FILES "*.cu")
 set(CUDA_NVCC_FLAGS
         -gencode=arch=compute_53,code=sm_53
         -gencode=arch=compute_53,code=compute_53
+        -gencode=arch=compute_70,code=sm_70
+        -gencode=arch=compute_75,code=sm_75
         --expt-relaxed-constexpr)
 
 
