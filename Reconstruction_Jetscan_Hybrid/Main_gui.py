@@ -10,9 +10,12 @@ root=tkinter.Tk()
 root.geometry('550x460')
 root.title('Jetscan')
 root.configure(background='#660000')
-
+'''
 def AA():
     os.system('/home/shank/Projects/3D_processing/jetscan/jetscan-final-edit/Open3D-for-Jetson/build/bin/examples/./RunSystem')
+'''
+def AA():
+    os.system('python3 realsense_D435i_recorder.py')
 
 def BB():
     os.system('/home/shank/Projects/3D_processing/jetscan/jetscan-final-edit/Open3D-for-Jetson/build/bin/examples/./ViewPoseGraph')
@@ -25,7 +28,7 @@ def DD():
     os.system('python3 run_regref.py config/intel/config.json --register --refine')
     os.system('/home/shank/Projects/3D_processing/jetscan/jetscan-final-edit/Open3D-for-Jetson/build/bin/examples/./Run_IntegrateScene')
 
-A=tkinter.Button(root,text="Run full System ",font=('Glacial Indifference',20),fg='white',width=30,bg="#ff8533",relief='flat',command= AA)
+A=tkinter.Button(root,text="Capture",font=('Glacial Indifference',20),fg='white',width=30,bg="#ff8533",relief='flat',command= AA)
 A.place(x = 25, y = 1*80, width=500, height=50)
 
 B=tkinter.Button(root,text=" View Posegraph",font=('Glacial Indifference',20),fg='white',width=30,bg="#ff8533",relief='flat',command= BB)

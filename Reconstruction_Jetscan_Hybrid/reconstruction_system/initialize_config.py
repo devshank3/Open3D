@@ -2,7 +2,7 @@
 # The MIT License (MIT)
 # See license file or visit www.open3d.org for details
 
-# examples/python/ReconstructionSystem/initialize_config.py
+# Adopted for Jetscan
 
 
 def set_default_value(config, key, value):

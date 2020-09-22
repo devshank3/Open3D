@@ -15,7 +15,8 @@ doxygen/
 docs/python_api/
 node_modules/
 Reconstruction_Jetscan_Hybrid/realsense2/
-
+Reconstruction_Jetscan_Hybrid/realsense3/
+Reconstruction_Jetscan_Hybrid/dataset/
 
 
 # Local configs
