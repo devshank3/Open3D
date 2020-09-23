@@ -2,7 +2,7 @@
   "name": "Jetscan using Intel D435i",
   "path_dataset": "dataset/realsense",
   "path_intrinsic": "dataset/realsense/camera_intrinsic.json",
-  "n_frames_per_fragment": 100,
+  "n_frames_per_fragment": 10,
   "n_keyframes_per_n_frame": 5,
   "max_depth": 1.0,
   "voxel_size": 0.05,

@@ -157,18 +157,15 @@ if __name__ == "__main__":
             # Align the depth frame to color frame
             aligned_frames = align.process(frames)
 
-            spatial = rs.spatial_filter()
-            #spatial.set_option(rs.option.holes_fill, 5)
-
             #spatial = rs.spatial_filter()
             #spatial.set_option(rs.option.filter_magnitude, 5)
-            spatial.set_option(rs.option.filter_smooth_alpha, .25)
-            spatial.set_option(rs.option.filter_smooth_delta, 45)
-            spatial.set_option(rs.option.holes_fill, 2)
+            #spatial.set_option(rs.option.filter_smooth_alpha, .25)
+            #spatial.set_option(rs.option.filter_smooth_delta, 45)
+            #spatial.set_option(rs.option.holes_fill, 2)
             # Get aligned frames
+
             aligned_depth_frame = aligned_frames.get_depth_frame()
-            
-            aligned_depth_frame = spatial.process(aligned_depth_frame)            
+            #aligned_depth_frame = spatial.process(aligned_depth_frame)            
             color_frame = aligned_frames.get_color_frame()
 
             # Validate that both frames are valid
@@ -193,7 +190,7 @@ if __name__ == "__main__":
             frame_count_o += 1
 
             # Remove background - Set pixels further than clipping_distance to grey
-            grey_color = 10
+            grey_color = 100
             #depth image is 1 channel, color is 3 channels
             depth_image_3d = np.dstack((depth_image, depth_image, depth_image))
             bg_removed = np.where((depth_image_3d > clipping_distance) | \
