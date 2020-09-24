@@ -1,6 +1,6 @@
 {
   "name": "Stanford - lounge",
-  "path_dataset": "/media/wei/Data/data/redwood_simulated/livingroom1-clean",
+  "path_dataset": "/home/shank/Projects/3D_processing/dataset/livingroom",
   "path_intrinsic": "",
   "n_frames_per_fragment": 50,
   "max_depth": 5.0,
@@ -8,5 +8,9 @@
   "max_depth_diff": 0.07,
   "preference_loop_closure_odometry": 0.1,
   "preference_loop_closure_registration": 5.0,
-  "tsdf_cubic_size": 4.0
+  "tsdf_cubic_size": 4.0,
+  "bucket_count_tsdf": 10000,
+  "value_cap_tsdf": 150000,
+  "max_vertices_mesh": 3500000,
+  "max_triangle_mesh": 8000000
 }

@@ -1,12 +1,16 @@
 {
   "name": "Stanford - lounge",
-  "path_dataset": "/home/wei/Workspace/data/stanford/lounge",
+  "path_dataset": "/home/shank/Projects/3D_processing/dataset/stonewall",
   "path_intrinsic": "",
   "max_depth": 3.0,
   "voxel_size": 0.05,
   "max_depth_diff": 0.07,
   "preference_loop_closure_odometry": 0.1,
   "preference_loop_closure_registration": 5.0,
-  "tsdf_cubic_size": 3.0,
+  "tsdf_cubic_size": 4.0,
+  "bucket_count_tsdf": 6000,
+  "value_cap_tsdf": 90000,
+  "max_vertices_mesh": 3500000,
+  "max_triangle_mesh": 8000000,
   "with_opencv": true
 }
