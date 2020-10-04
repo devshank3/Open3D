@@ -20,7 +20,7 @@ Team [Open3D](https://github.com/intel-isl/Open3D)
 ***
 ### **This repo constitutes the software stack for JetScan**
 
-Follow **https://github.com/devshank3/JetScan/blob/master/Software_O3D/Readme.md** for Software Setup
+Follow **https://github.com/devshank3/JetScan/blob/master/Software_O3D/README.md** for Software Setup
 
 ### Usage 
 
