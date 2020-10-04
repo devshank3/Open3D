@@ -24,10 +24,10 @@ def DD():
     os.system('/home/shank/Projects/3D_processing/jetscan/jetscan-final-edit/Open3D-for-Jetson/build/bin/examples/./Run_IntegrateScene /home/shank/Projects/3D_processing/jetscan/jetscan-final-edit/Open3D-for-Jetson/examples/Cuda/ReconstructionSystem/config/stanford/lounge.json')
 
 def EE():
-    os.system('/home/shank/Projects/3D_processing/jetscan/jetscan-final-edit/Open3D-for-Jetson/build/bin/examples/./RunSystem /home/shank/Projects/3D_processing/jetscan/jetscan-final-edit/Open3D-for-Jetson/examples/Cuda/ReconstructionSystem/config/stanford/lounge.json')
+    os.system('/home/shank/Projects/3D_processing/jetscan/jetscan-final-edit/Open3D-for-Jetson/build/bin/examples/./RunSystem /home/shank/Projects/3D_processing/jetscan/jetscan-final-edit/Open3D-for-Jetson/examples/Cuda/ReconstructionSystem/config/redwood_simulated/livingroom2.json')
 
 def FF():
-    os.system('/home/shank/Projects/3D_processing/jetscan/jetscan-final-edit/Open3D-for-Jetson/build/bin/examples/./ViewPosegraph')
+    os.system('/home/shank/Projects/3D_processing/jetscan/jetscan-final-edit/Open3D-for-Jetson/build/bin/examples/./ViewPoseGraph /home/shank/Projects/3D_processing/jetscan/jetscan-final-edit/Open3D-for-Jetson/examples/Cuda/ReconstructionSystem/config/redwood_simulated/livingroom2.json')
 
 
 A=tkinter.Button(root,text="Capture RGBD",font=('Glacial Indifference',20),fg='black',width=30,bg="#ff8533",relief='flat',command= AA)
