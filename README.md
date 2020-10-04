@@ -1,6 +1,6 @@
 # Open3D with CUDA support amended for Jetson platform (extented for JetScan)
 
-**forked from:**
+**Forked from:**
 
 https://github.com/theNded/Open3D
 
