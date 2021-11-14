@@ -1,5 +1,9 @@
 # Open3D with CUDA support amended for Jetson platform (extented for JetScan)
 
+### (Currently not maintained)
+Please refer to Official enhanced GPU tensor reconstruction system [Link for O3D docs](http://www.open3d.org/docs/latest/tutorial/t_reconstruction_system/index.html)
+
+***
 **Forked from:**
 
 https://github.com/theNded/Open3D
